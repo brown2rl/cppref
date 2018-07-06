@@ -1,0 +1,14 @@
+Text editor 
+Compiler - translates to machine code
+Linker - puts everything together (executables, libraries) for run time
+
+compile & link all source files (no headers) - $ clang++ -std=c++14 main.cpp, a.cpp
+to run compiled output.. $ ./a.out
+
+
+
+---------------
+variables have types (can be custom like Customer, Employee, etc.)
+expressions have types (all operands are a type, result is that type)
+
+auto - keyword request to compiler to infer type (good for huge custom type names)

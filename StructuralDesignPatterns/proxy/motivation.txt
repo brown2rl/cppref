@@ -1,0 +1,9 @@
+proxies:
+
+class functioning as interface to a resource.
+
+resource could be remote, expensive to construct, or logger, or some other added functionality
+
+
+
+

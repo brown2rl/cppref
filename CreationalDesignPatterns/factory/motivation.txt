@@ -1,0 +1,8 @@
+obj creation logic is complex
+
+constructor undescriptive
+
+obj creation outsourced to
+	a separate function (factory method)
+  a class (factory).. can inside or outside obj
+  heirarchies of factories for related objects

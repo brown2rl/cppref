@@ -1,0 +1,34 @@
+MPI (message passing interface):
+
+standard protocol for message passing b/w processes
+
+communication between processes/devices/CPU's/GPU's (cluster)
+
+run same process on all devices (divide & conquer tasks on different machines)
+
+exe's and data need to cross intranet/internet boundaries
+
+communicator - group of processes.. default is all
+
+rank - process' position within communicator.. 0 based
+
+API commands prefix MPI_
+
+has own typedef MPI_<T>
+
+proxies remote out and local out
+
+boost::mpi library is helpful***
+
+comm types:
+
+p2p - standard (return on sent), syncronous (return on handshake), buffered (return immediately), ready(return on reciever approval) modes
+
+collective - broadcast to/recieving from processes in communicator (root is broadcaster), barrier (every process has chance to recieve), gather (get data), scatter (send  partial data from 1 process to others), reduce (scatter data, return intermediate results, make final result from intermediate), reduce scatter, scan (partial reduction)
+
+extras:
+
+tags - + int for message ids
+communicators - define groups of contextual processes
+topologies - arrange processes in cartesian, tree system
+hosts - provide hosts file (nodefile), usually provided

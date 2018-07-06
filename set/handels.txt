@@ -1,0 +1,11 @@
+// ordered via comparison
+set<K>
+map<K,V>
+multiset<K>
+multimap<K,V>
+
+// hashes (unordered)
+unordered_set<K>
+unordered_map<K,V>
+unordered_multiset<K>
+unordered_multipmap<K,V>

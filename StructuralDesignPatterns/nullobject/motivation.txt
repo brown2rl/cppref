@@ -1,0 +1,7 @@
+decorator:
+
+allows for adding behaviour to individual objects without affecting behaviour of other objects in the same class
+
+augment existing functionality without rewriting or altering existing code (open-closed principle)
+
+

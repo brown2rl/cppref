@@ -1,0 +1,5 @@
+OS specific
+
+thread-safe syncronous data structs
+
+Windows concurrency pattern, condtion variable sync object

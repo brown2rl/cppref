@@ -1,0 +1,30 @@
+SIMD (single instruction, multiple data):
+
+perf optimization at instruction level single core
+
+one instruction operates on multiple data
+
+allows vectorized operations using large registers
+
+Registers:
+
+SSE - streaming SIMD Extentions (intel)
+AVX - advanced vector extentions (AMD/intel)
+
+Instructions:
+
+Integral & floating point operations
+scalar vs. packed data:
+  - 'addss' (2 operands), 'addps' (4 operands)
+use inline assembly, intrinsics, compiler vectorization for instructions
+
+Intrinsics:
+
+C++ wrappers around instructions and registers
+instructions wrapped with functions
+arithmetic operators not supported, use funcs
+FPGA design for parallel processing
+
+Compiler Vectorization:
+
+compiler uses vectors (packed data) in place of scalar values for optimization

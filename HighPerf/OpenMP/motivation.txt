@@ -1,0 +1,42 @@
+OpenMP: decordating code for 'multiproccessing'
+
+confined to single device/process
+
+imperative - manual, separate data, create threads, run comp on each thread, deal with data shareing across threads, use libs (MS PPL/Intel TBB)
+
+declarative - decorate code with 'parallel hints', compiler splits loops, etc
+
+compiler+lib solution, relying on compiler to multiprocess (data - parallalize this loop and task - run this in separate thread) and libs to maintain
+
+#pragma directives as decorators:
+
+  #pragma omp parallel
+    //some tasks
+
+compiler clauses (data sharing, sync, sched, etc)
+
+auto compiler parellelization uses openMP
+
+'omp for', 'omp do' - parallelize loops
+
+'sections' - assign code blocks to different threads
+
+'single' - block executed by only one thread (implied barrier)
+
+'master' - block executed by only master(main) thread (no implied barrier)
+
+Syncronization:
+
+'critical' - exe one thread at a time
+'atomic' - next MEMORY UPDATE is atomic
+'ordered' - sequential order
+'barrier' - threads suspended until each has reached this point
+'nowait'
+
+Data Sharing:
+
+'shared' - item accessible by all threads simultaneously
+'private' - item thread-local, no init or available outside parallel regoin
+'firstprivate' - init to original val
+'lastprivate' - original val updated on exit
+'default' - shared by default, or 'none' which is private by default

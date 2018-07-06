@@ -1,0 +1,10 @@
+composition:
+
+mechanism for treating individual (scalar) and composite objects in uniform manner
+
+make compound objects
+
+math expressions of simpler expressions
+grouping of shapes made of shapes
+
+treats single & composite objects with uniform api

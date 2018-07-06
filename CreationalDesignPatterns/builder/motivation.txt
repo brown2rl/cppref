@@ -1,0 +1,7 @@
+piecewise object construction API for building object piece by piece
+
+examples:
+
+- building string out of substrings
+- OO structs and implement operator<< on object graph
+

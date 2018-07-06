@@ -1,0 +1,11 @@
+flyweight:
+
+space optimization technique that lets us use less memory by storing common data externally and use pointers/tokens to refer to them
+
+avoid redundancy when storing data, ex: MMORPG users with identical first/last names.. store list of names and pointers to them
+
+apply formatting to console text... operate on ranges so each char doesn't have extra formatting char
+
+use a flyweight library, define ranges on homogenous collections
+
+

@@ -1,0 +1,9 @@
+bridge:
+
+a mechanism that decouples interface(heirarcy) from an implementation(heirarchy)
+
+a connector between objects
+
+pimpl idiom:
+
+pointer to implementation

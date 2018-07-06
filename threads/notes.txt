@@ -1,0 +1,3 @@
+threads do units of work
+
+event kernel obj - sync primitive

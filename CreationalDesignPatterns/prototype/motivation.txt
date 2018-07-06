@@ -1,0 +1,7 @@
+complex obj reiterate on existing design
+
+existing partial init = prototype
+
+deep copy (object graph) prototype & customize
+
+use factory to deep copy (clone)

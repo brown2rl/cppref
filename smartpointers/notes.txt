@@ -1,0 +1,30 @@
+unique_ptr:
+
+	exclusively owns object to which it points
+
+	no copies
+
+	movable
+
+	make_unique 
+
+shared_ptr:
+
+	shares ownership of object to which it points
+
+	reference counting
+
+	movable
+
+	copyable
+
+	make_shared - use when objects is shared
+
+	2 allocations: reference + target object
+
+weak_ptr:
+
+	refer to object, only access if it exists
+	break loops & structs
+	without preventing object from being deleted by a
+		reference or when ref count = 0

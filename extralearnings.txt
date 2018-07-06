@@ -1,0 +1,163 @@
+
+--------
+collection templates
+algorithms templates
+iterators - algorithms work with
+
+const should be thread safe = internall synced or read only
+thread_local - static data
+
+
+static thread_local int var = 2; (can be extern)
+	constructed & destructed arbitarily
+
+-----------
+atrributes:
+[[noreturn]] void func(const a& d) noexcept()
+{
+	throw something();
+}
+[[carries_dependency]]
+[[deprecated]]
+----------------
+POd = plain old datatype
+pod class = pod struct or pod union
+
+trivial class - scalar, array[scalars], and/or const/volitile
+	no virtual functions or virtual base
+standard layout class - memory layout of c struct
+	no virtual funcs or virtal base
+
+struct Trival:
+{ int a; private: int b; }
+struct STLayout:
+{ int a; int b; int c; ~STLayout(); STLayout(); }
+
+discriminated unions - type of STLayout
+____________
+alignof vs alignas
+
+---------------------
+
+inline namespaces:
+
+
+explicit conversion operators:
+
+used prevent certion implicit conversions
+explicit operator bool() const noexcept;
+------------------
+unicode strings:
+u8"utf-8", u"utf-16", U"utf-32"
+
+unicode char literals:
+u'a'
+U'a'
+
+raw literals (escaping escapes/regex/command strings):
+R"("\w+\\\w+")"
+
+user defined literals (value_name) for int,float,char,string:
+1.2_i;
+10_km;
+constexpr Distance operator "" _km(unsigned long long n)
+{
+	return Distance(n, Unit::kilometer_unit);
+}
+
+raw literal operators
+unsigned long long operator"" _b(const char* digits)
+{
+}
+-----------------
+constexpr - evaluate constant expressions/functions at compile time
+------------
+
+attributes of epressions used to diff copy/move:
+lvalue (T&) - initialized, name, addressable, references
+	always bount to lvalue
+rvalue (T&&) - init w/ varibale value, expression temp values
+---------------------
+variadit template authoring
+
+---------------------------
+#include <list> - linked, etc.
+#include <iterator> - navigating collections
+#include <utility>
+#include <tuple>
+#include <set>
+#include <queue>
+#include <dequeue>
+#include <multimap> - pairs of pairs
+#include <algorithm> - sort, for_each, find_if
+#include <chrono> - dates
+#include <ctime> - times
+#include <complex> - complex numbers
+#include <numeric> - linear algebra
+#include <random> - random numbers
+#include <regex>
+#include <cmath> - algebra, trig, etc.
+#include <memory> - smart pointers, etc.
+
+------------
+
+free store / heap - a place to keep data
+
+use it to memeory/resource management
+
+std::shared_ptr and std::unique_ptr
+
+RAII rue of 3, rule of 5
+---------------
+
+int* pi // pi pointer to int
+int j = 5; // reserve int memory
+pi=&j; // pi is address of j
+*pi = 3; // changes j data to 3
+
+const int* pi = &piabs; //pointer to const (can't change value)
+int* const pi = &piabz; //const pointer (can't reassign pointer)
+int const* const bruh = piz; //const pointer to const value
+
+int* nullpointer = nullptr; //set null pointer returns false
+pi = nullpointer? nullpointer : 5; //null pointer check
+
+Object obj(arg1, arg2); //new obj
+Object* name = &obj; //new pointer ref to obj
+name->function(arg1);//use 
+-----------------
+free fn's have no class
+--------------------
+
+can override operators in classes:
+T operator+(arg1, arg2)
+{
+	return arg1+arg2;
+}
+
+arg1+arg2
+
+allows for special operation types
+
+--------------------
+
+new - creates new object on heap/freestore
+
+--------------------
+
+enums - give unique names to sets of constants
+
+scoped enums- class
+----------------------
+#pragma once - use in header files and main to guard against redundant class declarations
+-----------------------
+bitwise
+5 & 1 // false 0101 AND 0001
+5 | 1 // 0101 OR 0001
+5 ^ 1 // true 0101 NOT 0001
+
+bit shift - >> <<
+5>> //0101 to 0010 2.. same as 5-3
+5<< //0101 to 1010 10.. same as 5*2
+
+

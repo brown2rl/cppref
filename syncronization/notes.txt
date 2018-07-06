@@ -1,0 +1,9 @@
+OS specific
+
+critical section (Win) is an event lock in windows to prevent concurrent access
+
+mutex consumes kernel allocated resources and returns a thread handle. can be owned
+
+slim reader/writer locks
+
+WindowS Runtime Library (template)

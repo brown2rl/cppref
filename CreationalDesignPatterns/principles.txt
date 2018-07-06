@@ -1,0 +1,21 @@
+patterns - common architectural approaches
+
+SOLID:
+  Single Responsibility -> 1 class : 1 responsibility
+
+  Open-Close -> entities open for extension, closed for    modification
+    write Templates, extend templates with classes, and/or extend templates with templates (data access)
+
+  Liskov Substitution -> objects replaceable with instances of subtypes without altering correctness
+     can use factories to create objects
+
+  Interface Segregation -> many client interface are better than one general-purpose interface
+    use multiple inheretance + decorator for general-purpose option
+
+  Dependency Inversion -> deps should be abstract, not concrete
+    high & low level modules, details should depend on abstractions
+     inversion of control -> creating abstractions and replacing deps with them
+     dep injection - frameworks init in class
+    
+
+

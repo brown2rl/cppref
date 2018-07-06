@@ -1,0 +1,5 @@
+safe singleton is static var with returned ref
+
+difficult to test
+
+

@@ -1,0 +1,15 @@
+C++ AMP (accellerated massive parallelism):
+
+use GPU computing b/c hardware designed for parallel
+
+SIMT (single instruction, multiple threads)
+
+CUDA (nvidia)
+OpenCL (general purpose)
+both use special compilers and lang extentions for GPU
+
+compiler+lib for heterogeneous computing
+
+language enhancement/extensions for GPU targeting
+
+

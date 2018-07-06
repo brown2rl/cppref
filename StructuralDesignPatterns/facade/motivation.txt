@@ -1,0 +1,13 @@
+facade:
+
+provides simple, easy to use interface over large and sophisticated body of code
+
+make lib easier to understand, use, test
+
+reduce deps on internal api's, allowing for refactoring of internal api's
+
+wrapping poorly designed api in simpler api
+
+may wish to expose internal api
+
+offer optional internal api usage

@@ -1,0 +1,7 @@
+adapter:
+
+a construct which adapts a given interface X to conform to Y interface
+
+used to wrap complex api's for simplicity/discoverability and more control
+
+use caching to improving perf from temp objects created when calling adapter functions

@@ -1,0 +1,33 @@
+BDD style
+
+
+
+story
+	scenario 1
+		given the initial state
+		when event occurs
+		then desired outcome
+	scenario N
+		..	
+		..
+		..
+
+create runnable spec
+
+naming/assurtion spec
+
+SCENARIO("description", "[TAG]")
+{
+	GIVEN("some condition")
+	{
+		//
+		WHEN("some occrence")
+		{
+			//
+			THEN("some action")
+			{
+				//
+			}
+		}
+	}
+}
