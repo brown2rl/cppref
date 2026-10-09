@@ -1,0 +1,9 @@
+.vscode/
+
+# Build output
+build/
+/io_test/
+/merge_sort/
+/depth-first/
+/breadth-first/
+/matrix-inverse/
