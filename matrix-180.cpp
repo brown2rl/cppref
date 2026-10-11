@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <limits>
 #include <vector>
 
 bool invertMatrix(const std::vector<std::vector<double>>& matrix,
@@ -42,7 +38,7 @@ int main() {
     for (int i = 0; i < numberOfRows; i++) {
         int columnSize = matrix[i].size();
         for (int j = 0; j < columnSize; j++) {
-            std::cout << std::fixed << std::setprecision(2) << matrix[i][j] << " ";
+            std::cout << matrix[i][j] << " ";
         }
         std::cout << "\n";
     }
@@ -51,14 +47,14 @@ int main() {
     std::vector<std::vector<double>> &inverseRef = inverse;
 
     if (invertMatrix(matrixRef, inverseRef)){
-        std::cout << "Matrix inversion successful.\n";
+        std::cout << "Matrix rotation by 180 degrees successful.\n";
 
-        std::cout << "Inverse matrix:\n";
+        std::cout << "Rotated matrix:\n";
         int numberOfRows = inverse.size();
         for (int i = 0; i < numberOfRows; i++) {
             int columnSize = inverse[i].size();
             for (int j = 0; j < columnSize; j++) {
-                std::cout << std::fixed << std::setprecision(2) << inverse[i][j] << " ";
+                std::cout << inverse[i][j] << " ";
             }
             std::cout << "\n";
         }
