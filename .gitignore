@@ -4,6 +4,7 @@
 build/
 /io_test/
 /merge_sort/
+/mergesort-linkedlist/
 /depth-first/
 /breadth-first/
 /matrix-inverse/
