@@ -74,7 +74,7 @@ void printListBackward(const Node* tail, int numberOfNodes) {
     std::cout << '\n';
 }
 
-int deleteList(Node* tail, int& numberOfNodes) {
+void deleteList(Node* tail, int& numberOfNodes) {
     
     while (numberOfNodes > 0) {
         Node* prev = tail->previous;
@@ -82,10 +82,12 @@ int deleteList(Node* tail, int& numberOfNodes) {
         tail = prev;
         numberOfNodes--;
     }
-    return numberOfNodes;
+    std::cout << "Number of nodes remaining: " << numberOfNodes << "\n";
 }
 
 bool createNodes(Node*& head, Node*& tail, const std::vector<int>& values, int& numberOfNodes) {
+    numberOfNodes = 0;
+
     for (int i = 0; i < values.size(); i++) {
         if (i == 0){
             // initialize the head and tail of the list (1 node)
@@ -106,8 +108,55 @@ bool createNodes(Node*& head, Node*& tail, const std::vector<int>& values, int& 
         numberOfNodes++;
     }
     std::cout << "Number of nodes created: " << numberOfNodes << "\n";
-    
     return true;
+}
+
+void displayList(const Node* head, const Node* tail, int numberOfNodes) {
+    std::cout << "List forward: \n";
+    printListForward(head, numberOfNodes);
+
+    std::cout << "List backward: \n";
+    printListBackward(tail, numberOfNodes);
+}
+
+void sortAndCreateNodes(Node*& head, Node*& tail, const std::vector<int>& values, int& numberOfNodes) {
+    if (createNodes(head, tail, mergeSort(values), numberOfNodes)){
+    
+        std::cout << "Ascending list: \n";
+        printListForward(head, numberOfNodes);
+
+        std::cout << "Descending list: \n";
+        printListBackward(tail, numberOfNodes);
+    
+        deleteList(tail, numberOfNodes);
+    }
+}
+
+void popNode(Node*& head, Node*& tail, std::vector<int>& values, int valueToPop, int& numberOfNodes) {
+    std::vector<int> newValues;
+
+    for (int i = 0; i < values.size(); i++) {
+        if (values[i] == valueToPop) {
+           continue; // Skip the value to pop
+        }
+        newValues.push_back(values[i]);
+    }
+
+    std::cout << "Popped " << valueToPop << " from the list. \n";
+    
+    values = newValues;
+    numberOfNodes = values.size();
+    
+    sortAndCreateNodes(head, tail, values, numberOfNodes);
+}
+
+void insertNode(Node*& head, Node*& tail, std::vector<int>& values, int valueToInsert, int& numberOfNodes) {
+    
+    values.push_back(valueToInsert);    
+
+    std::cout << "Inserted " << valueToInsert << " into the list. \n";
+        
+    sortAndCreateNodes(head, tail, values, numberOfNodes);
 }
 
 int main() {
@@ -119,26 +168,13 @@ int main() {
 
     int numberOfNodes = 0;
 
-    if (createNodes(head, tail, valuesRef, numberOfNodes)){
-    
-        std::cout << "Original list: \n";
-        printListForward(head, numberOfNodes);
+    sortAndCreateNodes(head, tail, valuesRef, numberOfNodes);
 
-        std::cout << "Reversed list: \n";
-        printListBackward(tail, numberOfNodes);
+    std::vector<int> valuesToPop = {43, 82};
     
-        std::cout << "Number of nodes remaining: " << deleteList(tail, numberOfNodes) << "\n";
-    }
-    if (createNodes(head, tail, mergeSort(valuesRef), numberOfNodes)){
-    
-        std::cout << "Ascending list: \n";
-        printListForward(head, numberOfNodes);
+    popNode(head, tail, valuesRef, valuesToPop[0], numberOfNodes);
 
-        std::cout << "Descending list: \n";
-        printListBackward(tail, numberOfNodes);
-    
-        std::cout << "Number of nodes remaining: " << deleteList(tail, numberOfNodes) << "\n";
-    }
+    insertNode(head, tail, valuesRef, 50, numberOfNodes);
 
     delete head;
     delete tail;
