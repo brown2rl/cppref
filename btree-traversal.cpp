@@ -11,7 +11,7 @@ void traverseBTree(const BTreeNode* node) {
         return;
     }
 
-    for (std::size_t i = 0; i < node->keys.size(); ++i) {
+    for (std::size_t i = 0; i < node->keys.size(); i++) {
         if (i < node->children.size()) {
             traverseBTree(node->children[i]);
         }
@@ -27,13 +27,10 @@ int main() {
     BTreeNode left{{5, 7}, {}};
     BTreeNode *leftPtr = &left;
 
-    BTreeNode middle{{12, 15}, {}};
-    BTreeNode *middlePtr = &middle;
-
     BTreeNode right{{25, 30}, {}};
     BTreeNode *rightPtr = &right;
 
-    BTreeNode root{{10, 20}, {leftPtr, middlePtr, rightPtr}};
+    BTreeNode root{{10, 20}, {leftPtr, rightPtr}};
     BTreeNode *rootPtr = &root;
 
     std::cout << "B-tree in-order traversal: ";
@@ -41,7 +38,6 @@ int main() {
     std::cout << '\n';
 
     delete leftPtr;
-    delete middlePtr;
     delete rightPtr;
     delete rootPtr;
 
